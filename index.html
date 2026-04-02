@@ -1,720 +1,1222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masjid Westall AGM Accountability Report 2025–2026</title>
-  <style>
-    :root {
-      --bg: #f6f3ee;
-      --card: #ffffff;
-      --ink: #1f2937;
-      --muted: #6b7280;
-      --brand: #1f5d4d;
-      --brand-2: #9d7a3b;
-      --line: #e5e7eb;
-      --soft: #f3f4f6;
-      --accent: #ecf7f3;
-      --shadow: 0 10px 30px rgba(0,0,0,.06);
-      --radius: 18px;
-      --max: 1120px;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masjid Westall AGM Accountability Report 2025–2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#f6f8fb;
+            --surface:#ffffff;
+            --surface-2:#f1f5f9;
+            --ink:#0f172a;
+            --muted:#475569;
+            --line:#dbe4ee;
+            --brand:#0f3d2e;
+            --brand-2:#14532d;
+            --brand-3:#1d4ed8;
+            --gold:#c8a85d;
+            --shadow:0 10px 30px rgba(15,23,42,.08);
+            --radius:20px;
+            --max:1180px;
+        }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(180deg, #faf7f2 0%, #f3f4f6 100%);
-      line-height: 1.6;
-    }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body{
+            margin:0;
+            font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+            background:
+                    radial-gradient(circle at top left, rgba(29,78,216,.06), transparent 28%),
+                    radial-gradient(circle at top right, rgba(20,83,45,.08), transparent 30%),
+                    var(--bg);
+            color:var(--ink);
+            line-height:1.7;
+        }
 
-    a { color: inherit; }
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+        a { color: var(--brand-3); text-decoration: none; }
+        img { max-width: 100%; display: block; }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(10px);
-      background: rgba(246,243,238,.88);
-      border-bottom: 1px solid rgba(229,231,235,.8);
-    }
+        .shell{
+            display:grid;
+            grid-template-columns: 290px minmax(0,1fr);
+            gap:28px;
+            max-width:calc(var(--max) + 80px);
+            margin:0 auto;
+            padding:24px;
+        }
 
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
-    }
+        .sidebar{
+            position:sticky;
+            top:20px;
+            align-self:start;
+            background:rgba(255,255,255,.82);
+            backdrop-filter: blur(14px);
+            border:1px solid rgba(219,228,238,.9);
+            border-radius:24px;
+            box-shadow:var(--shadow);
+            padding:22px 18px;
+            max-height:calc(100vh - 40px);
+            overflow:auto;
+        }
 
-    .brand {
-      font-weight: 800;
-      color: var(--brand);
-      letter-spacing: -.02em;
-    }
+        .side-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:7px 12px;
+            border-radius:999px;
+            background:#ecfdf5;
+            color:#166534;
+            font-size:.8rem;
+            font-weight:700;
+            margin-bottom:14px;
+        }
 
-    .nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+        .brand-lockup{
+            margin-bottom:20px;
+            padding-bottom:18px;
+            border-bottom:1px solid var(--line);
+        }
 
-    .nav a {
-      text-decoration: none;
-      font-size: 14px;
-      color: var(--muted);
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.7);
-      border: 1px solid var(--line);
-    }
+        .brand-lockup h1{
+            margin:0 0 6px;
+            font-size:1.05rem;
+            line-height:1.35;
+        }
 
-    .hero {
-      padding: 56px 0 28px;
-    }
+        .brand-lockup p{
+            margin:0;
+            color:var(--muted);
+            font-size:.92rem;
+        }
 
-    .hero-card {
-      background: linear-gradient(135deg, rgba(31,93,77,1) 0%, rgba(48,93,123,1) 100%);
-      color: white;
-      border-radius: 28px;
-      padding: 44px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
+        .toc{
+            display:grid;
+            gap:8px;
+        }
 
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -60px -60px auto;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.08);
-    }
+        .toc a{
+            display:block;
+            padding:10px 12px;
+            border-radius:12px;
+            color:#1e293b;
+            font-size:.92rem;
+        }
 
-    .eyebrow {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      opacity: .86;
-      margin-bottom: 10px;
-    }
+        .toc a:hover{
+            background:var(--surface-2);
+        }
 
-    h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 14px; }
-    h1 { font-size: clamp(34px, 5vw, 56px); letter-spacing: -.03em; max-width: 780px; }
-    h2 { font-size: 30px; letter-spacing: -.02em; }
-    h3 { font-size: 22px; letter-spacing: -.02em; }
-    h4 { font-size: 17px; }
-    p { margin: 0 0 14px; }
+        .main{
+            min-width:0;
+        }
 
-    .hero-sub {
-      max-width: 760px;
-      font-size: 17px;
-      opacity: .92;
-    }
+        .hero{
+            position:relative;
+            overflow:hidden;
+            border-radius:32px;
+            padding:44px;
+            background:
+                    linear-gradient(135deg, rgba(8,26,19,.92), rgba(15,61,46,.96)),
+                    linear-gradient(135deg, #0f3d2e, #1d4ed8);
+            color:#fff;
+            box-shadow:var(--shadow);
+            margin-bottom:28px;
+        }
 
-    .hero-meta {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 28px;
-    }
+        .hero::after{
+            content:"";
+            position:absolute;
+            inset:auto -60px -60px auto;
+            width:240px;
+            height:240px;
+            background:radial-gradient(circle, rgba(200,168,93,.35), transparent 65%);
+            pointer-events:none;
+        }
 
-    .metric {
-      background: rgba(255,255,255,.11);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 18px;
-      padding: 16px;
-    }
+        .eyebrow{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            font-size:.82rem;
+            font-weight:700;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            color:#dbeafe;
+            margin-bottom:18px;
+        }
 
-    .metric .label {
-      font-size: 13px;
-      opacity: .82;
-      margin-bottom: 8px;
-    }
+        .hero h2{
+            margin:0 0 12px;
+            font-size:clamp(2rem, 4vw, 3.4rem);
+            line-height:1.08;
+        }
 
-    .metric .value {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -.02em;
-    }
+        .hero p{
+            margin:0;
+            max-width:780px;
+            font-size:1.02rem;
+            color:rgba(255,255,255,.86);
+        }
 
-    .section {
-      padding: 28px 0;
-    }
+        .hero-meta{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            margin-top:22px;
+        }
 
-    .section-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 30px;
-    }
+        .meta-chip{
+            padding:10px 14px;
+            border-radius:999px;
+            background:rgba(255,255,255,.09);
+            border:1px solid rgba(255,255,255,.12);
+            font-size:.9rem;
+        }
 
-    .section-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
+        .kpis{
+            display:grid;
+            grid-template-columns:repeat(4,minmax(0,1fr));
+            gap:18px;
+            margin:22px 0 28px;
+        }
 
-    .section-number {
-      min-width: 50px;
-      height: 50px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--accent);
-      color: var(--brand);
-      font-weight: 800;
-      font-size: 18px;
-    }
+        .kpi{
+            background:var(--surface);
+            border:1px solid var(--line);
+            box-shadow:var(--shadow);
+            border-radius:22px;
+            padding:22px;
+        }
 
-    .muted { color: var(--muted); }
-    .lead { font-size: 17px; color: #374151; }
+        .kpi .label{
+            color:var(--muted);
+            font-size:.86rem;
+            margin-bottom:8px;
+        }
 
-    .grid-2, .grid-3, .grid-4 {
-      display: grid;
-      gap: 16px;
-    }
+        .kpi .value{
+            font-size:1.7rem;
+            font-weight:800;
+            line-height:1.1;
+            margin-bottom:6px;
+        }
 
-    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+        .kpi .sub{
+            color:var(--muted);
+            font-size:.86rem;
+        }
 
-    .tile {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px;
-    }
+        .card{
+            background:var(--surface);
+            border:1px solid var(--line);
+            box-shadow:var(--shadow);
+            border-radius:24px;
+            padding:30px;
+            margin-bottom:22px;
+        }
 
-    .tile.soft { background: var(--soft); }
-    .tile.accent { background: var(--accent); }
+        .section-title{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:16px;
+            margin-bottom:18px;
+            flex-wrap:wrap;
+        }
 
-    ul, ol { margin: 8px 0 14px 20px; }
-    li { margin-bottom: 6px; }
+        .section-title h3{
+            margin:0;
+            font-size:1.5rem;
+            line-height:1.2;
+        }
 
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
+        .section-title .tag{
+            padding:8px 12px;
+            border-radius:999px;
+            background:#eff6ff;
+            color:#1d4ed8;
+            font-size:.82rem;
+            font-weight:700;
+        }
 
-    .pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--soft);
-      border: 1px solid var(--line);
-      font-size: 14px;
-      color: #374151;
-    }
+        .lede{
+            color:var(--muted);
+            margin-top:-4px;
+            margin-bottom:18px;
+        }
 
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: white;
-    }
+        .bullets{
+            margin:0;
+            padding-left:1.2rem;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 680px;
-    }
+        .bullets li{
+            margin:.35rem 0;
+        }
 
-    th, td {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
+        .grid-2{
+            display:grid;
+            grid-template-columns:repeat(2,minmax(0,1fr));
+            gap:18px;
+        }
 
-    th {
-      background: #f9fafb;
-      color: #111827;
-      font-size: 14px;
-    }
+        .grid-3{
+            display:grid;
+            grid-template-columns:repeat(3,minmax(0,1fr));
+            gap:18px;
+        }
 
-    tr:last-child td { border-bottom: 0; }
+        .mini{
+            background:var(--surface-2);
+            border:1px solid var(--line);
+            border-radius:18px;
+            padding:18px;
+        }
 
-    .timeline {
-      display: grid;
-      gap: 14px;
-      margin-top: 10px;
-    }
+        .mini h4{
+            margin:0 0 10px;
+            font-size:1rem;
+        }
 
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 14px 0;
-      border-top: 1px solid var(--line);
-    }
+        .mini p{
+            margin:0;
+            color:var(--muted);
+        }
 
-    .timeline-item:first-child { border-top: 0; }
-    .timeline-date {
-      font-weight: 700;
-      color: var(--brand);
-    }
+        .timeline{
+            position:relative;
+            padding-left:26px;
+            display:grid;
+            gap:18px;
+        }
 
-    .footer {
-      padding: 28px 0 56px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+        .timeline::before{
+            content:"";
+            position:absolute;
+            left:8px;
+            top:4px;
+            bottom:4px;
+            width:2px;
+            background:linear-gradient(to bottom, var(--gold), #cbd5e1);
+        }
 
-    .footer-card {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.8);
-      border-radius: 18px;
-      padding: 22px;
-    }
+        .step{
+            position:relative;
+            background:var(--surface-2);
+            border:1px solid var(--line);
+            border-radius:18px;
+            padding:18px 18px 18px 20px;
+        }
 
-    .small { font-size: 14px; }
-    .strong { font-weight: 700; }
+        .step::before{
+            content:"";
+            position:absolute;
+            left:-22px;
+            top:20px;
+            width:12px;
+            height:12px;
+            border-radius:999px;
+            background:var(--gold);
+            box-shadow:0 0 0 4px #fff;
+        }
 
-    @media (max-width: 900px) {
-      .hero-meta, .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr 1fr; }
-      .section-head { flex-direction: column; }
-    }
+        .step h4{
+            margin:0 0 8px;
+            font-size:1rem;
+        }
 
-    @media (max-width: 680px) {
-      .hero-card { padding: 28px; }
-      .hero-meta, .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-      .timeline-item { grid-template-columns: 1fr; gap: 6px; }
-      .topbar-inner { align-items: flex-start; flex-direction: column; }
-    }
-  </style>
+        .step p, .step ul{
+            margin:0;
+            color:var(--muted);
+        }
+
+        .quote{
+            border-left:4px solid var(--gold);
+            padding:18px 18px 18px 20px;
+            border-radius:0 14px 14px 0;
+            background:#fffaf0;
+            color:#3f3f46;
+            font-style:italic;
+        }
+
+        .stat-bar{
+            display:grid;
+            gap:12px;
+            margin-top:10px;
+        }
+
+        .bar-row{
+            display:grid;
+            grid-template-columns:190px 1fr 74px;
+            align-items:center;
+            gap:14px;
+            font-size:.94rem;
+        }
+
+        .bar-track{
+            position:relative;
+            height:12px;
+            background:#e2e8f0;
+            border-radius:999px;
+            overflow:hidden;
+        }
+
+        .bar-fill{
+            position:absolute;
+            inset:0 auto 0 0;
+            height:100%;
+            border-radius:999px;
+            background:linear-gradient(90deg, var(--brand), var(--brand-3));
+        }
+
+        .callout{
+            padding:18px 20px;
+            border-radius:18px;
+            background:linear-gradient(135deg, #eff6ff, #f8fafc);
+            border:1px solid #bfdbfe;
+            color:#1e3a8a;
+        }
+
+        .dua{
+            font-family:"Amiri", serif;
+            font-size:1.18rem;
+            line-height:2.05;
+            white-space:pre-line;
+            background:linear-gradient(135deg, #10261d, #0f3d2e);
+            color:#f8fafc;
+            border-radius:22px;
+            padding:28px;
+            box-shadow:var(--shadow);
+            margin-top:16px;
+        }
+
+        .footer-note{
+            text-align:center;
+            color:var(--muted);
+            font-size:.9rem;
+            padding:10px 0 20px;
+        }
+
+        .print-only{
+            display:none;
+        }
+
+        @media (max-width: 1080px){
+            .shell{
+                grid-template-columns:1fr;
+            }
+            .sidebar{
+                position:relative;
+                top:0;
+                max-height:none;
+            }
+            .kpis{
+                grid-template-columns:repeat(2,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width: 760px){
+            .hero{
+                padding:28px;
+                border-radius:24px;
+            }
+            .card{
+                padding:22px;
+            }
+            .grid-2, .grid-3, .kpis{
+                grid-template-columns:1fr;
+            }
+            .bar-row{
+                grid-template-columns:1fr;
+                gap:8px;
+            }
+            .shell{
+                padding:14px;
+            }
+        }
+
+        @media print{
+            body{
+                background:#fff;
+            }
+            .shell{
+                display:block;
+                max-width:none;
+                padding:0;
+            }
+            .sidebar{
+                display:none;
+            }
+            .hero, .card, .kpi{
+                box-shadow:none;
+                border:1px solid #ddd;
+            }
+            .print-only{
+                display:block;
+            }
+            a{
+                color:inherit;
+                text-decoration:none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">🕌 Masjid Westall AGM Report</div>
-      <nav class="nav">
-        <a href="#overview">Overview</a>
-        <a href="#vision">Vision</a>
-        <a href="#structure">Structure</a>
-        <a href="#programs">Programs</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#finance">Finance</a>
-        <a href="#future">Future</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-card">
-          <div class="eyebrow">Committee Term: 2025–2027</div>
-          <h1>AGM Accountability Report 2025–2026</h1>
-          <p class="hero-sub">Masjid Westall has continued its transition toward a more structured, program-driven community model, supported by stronger collaboration, facility development, financial growth, and a clearer long-term direction.</p>
-
-          <div class="hero-meta">
-            <div class="metric">
-              <div class="label">Total Income</div>
-              <div class="value">$337,814</div>
-            </div>
-            <div class="metric">
-              <div class="label">Total Expenses</div>
-              <div class="value">$295,462</div>
-            </div>
-            <div class="metric">
-              <div class="label">Net Surplus</div>
-              <div class="value">$42,353</div>
-            </div>
-            <div class="metric">
-              <div class="label">Closing Balance</div>
-              <div class="value">$57,015</div>
-            </div>
-          </div>
+<div class="shell">
+    <aside class="sidebar">
+        <div class="side-badge">AGM 2025–2026</div>
+        <div class="brand-lockup">
+            <h1>🕌 Masjid Westall</h1>
+            <p>Accountability Report<br>Committee Term: 2025–2027</p>
         </div>
-      </div>
-    </section>
 
-    <section id="overview" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <div>
-              <div class="section-number">1</div>
-            </div>
-            <div>
-              <h2>Opening & Overview</h2>
-              <p class="lead"><strong>Bismillahirrahmanirrahim.</strong> All praise is due to Allah SWT, and may peace and blessings be upon Prophet Muhammad ﷺ.</p>
-            </div>
-          </div>
-          <p>We express our sincere gratitude to all jamaah, volunteers, committee members, and stakeholders who have continuously supported Masjid Westall throughout the 2025–2026 period.</p>
-          <p>This report presents a structured overview of community programs, organisational development, facility improvements, financial progress, and strategic direction moving forward.</p>
-          <div class="pill-row">
-            <span class="pill">Community Programs</span>
-            <span class="pill">Organisational Development</span>
-            <span class="pill">Facility Improvements</span>
-            <span class="pill">Financial Progress</span>
-            <span class="pill">Strategic Direction</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        <nav class="toc">
+            <a href="#overview">1. Opening Remarks</a>
+            <a href="#vision">2. Vision & Mission</a>
+            <a href="#governance">3. Governance</a>
+            <a href="#divisions">4. Core Divisions</a>
+            <a href="#facilities">5. Facilities, Media & Communication</a>
+            <a href="#programs">6. Community Programs</a>
+            <a href="#finance">7. Financial Performance</a>
+            <a href="#future">9. Transition & Future Direction</a>
+            <a href="#reflection">10. Reflection & Journey 2025</a>
+            <a href="#personal">Personal Reflection</a>
+            <a href="#community">Message to the Community</a>
+            <a href="#closing">Closing & Dua</a>
+        </nav>
+    </aside>
 
-    <section id="vision" class="section">
-      <div class="container grid-2">
-        <div class="section-card">
-          <div class="section-head">
-            <div class="section-number">2</div>
-            <div>
-              <h2>Vision</h2>
-              <p class="muted">2025–2027</p>
+    <main class="main">
+        <section class="hero">
+            <div class="eyebrow">AGM Accountability Report</div>
+            <h2>Masjid Westall<br>2025–2026</h2>
+            <p>
+                A structured report on community programs, organisational development,
+                facility improvements, financial progress, strategic direction, and
+                reflections from a foundational year of growth.
+            </p>
+            <div class="hero-meta">
+                <div class="meta-chip">Committee Term: 2025–2027</div>
+                <div class="meta-chip">Program-driven community model</div>
+                <div class="meta-chip">Faith, service, sustainability</div>
             </div>
-          </div>
-          <p>To develop Masjid Westall as a spiritually enriching, inclusive, and structured community hub that nurtures iman, strengthens ukhuwah, and empowers every individual to grow and contribute.</p>
-          <p>Masjid Westall aims to serve all levels of the community — from children to elders — not only as a place of worship, but also as a center for education, connection, and personal development.</p>
-          <div class="tile accent">
-            <h4>Core Roles</h4>
-            <ul>
-              <li>A place of worship</li>
-              <li>A centre of learning: Islamic and general teaching</li>
-              <li>A hub for community connection</li>
+        </section>
+
+        <section class="kpis">
+            <div class="kpi">
+                <div class="label">Opening Balance</div>
+                <div class="value">$14,661.98</div>
+                <div class="sub">Financial starting point</div>
+            </div>
+            <div class="kpi">
+                <div class="label">Total Income</div>
+                <div class="value">$337,814.14</div>
+                <div class="sub">Apr 2025 – Mar 2026</div>
+            </div>
+            <div class="kpi">
+                <div class="label">Total Expenses</div>
+                <div class="value">$295,461.50</div>
+                <div class="sub">Programs, operations, capital works</div>
+            </div>
+            <div class="kpi">
+                <div class="label">Closing Balance</div>
+                <div class="value">$57,014.62</div>
+                <div class="sub">Positive position maintained</div>
+            </div>
+        </section>
+
+        <section id="overview" class="card">
+            <div class="section-title">
+                <h3>1. Opening Remarks</h3>
+                <span class="tag">Overview</span>
+            </div>
+            <p><strong>Bismillahirrahmanirrahim</strong></p>
+            <p>
+                All praise is due to Allah SWT, and may peace and blessings be upon Prophet Muhammad ﷺ.
+                We express our sincere gratitude to all jamaah, volunteers, committee members, and stakeholders
+                who have continuously supported Masjid Westall throughout the 2025–2026 period.
+            </p>
+            <p>This report presents a structured overview of:</p>
+            <ul class="bullets">
+                <li>Community programs</li>
+                <li>Organisational development</li>
+                <li>Facility improvements</li>
+                <li>Financial progress</li>
+                <li>Strategic direction moving forward</li>
             </ul>
-          </div>
+            <p>
+                Throughout 2025, Masjid Westall has transitioned toward a more structured, program-driven
+                community model, with stronger collaboration across divisions including Youth, Muslimah,
+                and partner organisations.
+            </p>
+        </section>
+
+        <section id="vision" class="card">
+            <div class="section-title">
+                <h3>2. Vision, Mission, and Strategic Focus</h3>
+                <span class="tag">Foundation</span>
+            </div>
+
+            <div class="grid-2">
+                <div class="mini">
+                    <h4>2.1 Vision (2025–2027)</h4>
+                    <p>
+                        To develop Masjid Westall as a spiritually enriching, inclusive, and structured community hub
+                        that nurtures iman, strengthens ukhuwah, and empowers every individual to grow and contribute.
+                    </p>
+                </div>
+                <div class="mini">
+                    <h4>Masjid Westall serves as:</h4>
+                    <ul class="bullets">
+                        <li>A place of worship (Objective 1)</li>
+                        <li>A centre of learning: Islamic and General Teaching (Objective 2)</li>
+                        <li>A hub for community connection (Objective 3)</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>Focus Area:</strong> Strengthening Community Activities</p>
+                </div>
+            </div>
+
+            <div class="grid-3" style="margin-top:18px;">
+                <div class="mini">
+                    <h4>Mission 1</h4>
+                    <p>Promote program-based leadership rooted in iman, ukhuwah, and amal.</p>
+                </div>
+                <div class="mini">
+                    <h4>Mission 2</h4>
+                    <p>Empower structured involvement with clear roles and ownership.</p>
+                </div>
+                <div class="mini">
+                    <h4>Mission 3</h4>
+                    <p>Strengthen iman through strategic religious programs and learning.</p>
+                </div>
+                <div class="mini">
+                    <h4>Mission 4</h4>
+                    <p>Elevate youth and community engagement through meaningful initiatives.</p>
+                </div>
+                <div class="mini">
+                    <h4>Mission 5</h4>
+                    <p>Foster ukhuwah across seniors, new members, families, and younger generations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="governance" class="card">
+            <div class="section-title">
+                <h3>3. Governance and Organisational Structure</h3>
+                <span class="tag">Leadership</span>
+            </div>
+
+            <p class="lede">
+                The organisational structure is designed to support scalable program delivery, clear accountability,
+                and cross-division coordination.
+            </p>
+
+            <div class="grid-2">
+                <div class="mini">
+                    <h4>3.1 Governance Overview</h4>
+                    <ul class="bullets">
+                        <li>Clear leadership accountability</li>
+                        <li>Program-based execution</li>
+                        <li>Sustainable delegation across divisions</li>
+                        <li>Alignment with Vision 2025–2027</li>
+                    </ul>
+                </div>
+                <div class="mini">
+                    <h4>Three-Layer Structure</h4>
+                    <ul class="bullets">
+                        <li>Executive Leadership (Takmir)</li>
+                        <li>Core Operational Divisions</li>
+                        <li>Supporting & Expansion Divisions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top:18px;" class="mini">
+                <h4>3.2 Executive Leadership (Takmir)</h4>
+                <div class="grid-2">
+                    <ul class="bullets">
+                        <li><strong>Chairperson:</strong> Choiru — Overall leadership and external representation</li>
+                        <li><strong>Vice Chairperson:</strong> Fikrie Afif — Internal coordination and execution support</li>
+                        <li><strong>Second Vice Chairperson:</strong> Ardissa Saukat — Program alignment and initiative support</li>
+                        <li><strong>Secretary 1:</strong> Abbadi Thalib — Administration and documentation</li>
+                    </ul>
+                    <ul class="bullets">
+                        <li><strong>Secretary 2:</strong> Dipto Pratyaksa (Recruited Oct 2025) — Systems, reporting, and coordination</li>
+                        <li><strong>Treasurer:</strong> Wildan — Financial management and reporting</li>
+                        <li><strong>Technical Advisor / Bridge:</strong> Lintang — Cross-division coordination</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="divisions" class="card">
+            <div class="section-title">
+                <h3>4. Core Operational Divisions</h3>
+                <span class="tag">Execution</span>
+            </div>
+
+            <div class="grid-2">
+                <div class="mini">
+                    <h4>4.1 Religious & Dakwah Division (Kerohanian)</h4>
+                    <p><strong>Head:</strong> Abyan</p>
+                    <p><strong>Role:</strong> Imam roster and spiritual activities</p>
+                    <p><strong>Strategic Priorities</strong></p>
+                    <ul class="bullets">
+                        <li>Expansion of structured kajian system</li>
+                        <li>Strengthening imam regeneration pipeline</li>
+                        <li>Inclusive programs for female, youth, and muallaf communities</li>
+                    </ul>
+                    <p><strong>Program Areas & PIC</strong></p>
+                    <ul class="bullets">
+                        <li>Kajian Jumat – Choirul En Huda, Jimmy</li>
+                        <li>Kajian Umum – Ust. Hastomi, Ust. Hafidz</li>
+                        <li>Kajian MIIS – Almuntarizi Al-Bukhari</li>
+                        <li>Quran Literacy – Istiari, Widodo</li>
+                        <li>Kajian Hadits Female – Rizka Roswina</li>
+                        <li>Kajian Mingguan – Istiari, Widodo</li>
+                        <li>Dakwah Muallaf – Bandu, Suradi</li>
+                        <li>Sholat Jumat Operations – Awod</li>
+                        <li>Regenerasi Imam – Ust. Hilmi</li>
+                        <li>Kajian Muslimah – Ningrum</li>
+                        <li>Tahsin Kid and Muslimah Tahsin – Mashael Kelantan and Gebi</li>
+                    </ul>
+                    <p><strong>Supporting Members</strong><br>
+                        Arief Syamsulakna, Aries, Bima, Gibraltar, Indra Falatehan, Mashael Kelantan, Suradi, Pak Ade
+                    </p>
+                    <p><strong>Key Outputs</strong></p>
+                    <ul class="bullets">
+                        <li>New Imam Westall Assignment – Ustadz Umair</li>
+                        <li>Weekly structured kajian</li>
+                        <li>Sunday programs</li>
+                        <li>Kajian Jumat Malam</li>
+                        <li>Quran literacy system</li>
+                        <li>Structured imam roster</li>
+                        <li>Arabic Class</li>
+                        <li>Youth educational program</li>
+                        <li>Imam regeneration pipeline</li>
+                        <li>Inclusive religious programs</li>
+                    </ul>
+                </div>
+
+                <div class="mini">
+                    <h4>4.2 Domestic & Facility Division (Rumah Tangga)</h4>
+                    <p><strong>Head:</strong> Ridwan</p>
+                    <p><strong>Team Members</strong><br>
+                        Dadang, Marlene, Indra Falatehan, Suradi, Awod, Barman, Lintang, Doroy, Imam, Ina, Ningrum, Erna
+                    </p>
+                    <p><strong>Key Enhancements</strong></p>
+                    <ul class="bullets">
+                        <li>Improved kitchen organisation and equipment storage</li>
+                        <li>Better prayer space setup and cleanliness</li>
+                        <li>Structured support for events and Ramadan</li>
+                        <li>Maintenance and stocking for daily and weekly operation</li>
+                    </ul>
+                    <p><strong>Key Outputs</strong></p>
+                    <ul class="bullets">
+                        <li>Clean and functional masjid environment</li>
+                        <li>Reliable support for programs</li>
+                        <li>Facility readiness for events</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities" class="card">
+            <div class="section-title">
+                <h3>5. Facilities, Media, and Communication</h3>
+                <span class="tag">Infrastructure & Visibility</span>
+            </div>
+
+            <div class="grid-2">
+                <div class="mini">
+                    <h4>5.1 Facility Improvement & Development</h4>
+                    <p><strong>Head:</strong> Aru</p>
+                    <p><strong>Team:</strong> Ferry, Ijang, Lintang, Dipto, Choiru, Ando, Salman</p>
+                    <p>
+                        During 2025–2026, Masjid Westall undertook major infrastructure upgrades to improve usability,
+                        accessibility, and long-term sustainability.
+                    </p>
+                    <ul class="bullets">
+                        <li>Classroom & Disabled Toilet — <strong>$40,865</strong></li>
+                        <li>Pergola Insulation — <strong>$31,086</strong></li>
+                        <li>Ceiling, Insulation & Roof Replacement — <strong>$27,000</strong></li>
+                        <li>Timber Wall Panels & Bookshelves — <strong>$24,585</strong></li>
+                        <li>Air Conditioning Upgrade — <strong>$13,574</strong></li>
+                        <li>Audio Visual & IT Upgrade — <strong>$6,944</strong></li>
+                        <li>New Mihrab & Interior Enhancement — <strong>Estimated $27,000</strong></li>
+                        <li>Electrical System Upgrade — <strong>Estimated $15,000</strong></li>
+                    </ul>
+                    <p><strong>Forward Outlook</strong></p>
+                    <ul class="bullets">
+                        <li>Front façade and entrance upgrade (~$60,000)</li>
+                        <li>Roof and gutter restoration (~$25,000)</li>
+                        <li>Boundary and safety improvements (~$15,000)</li>
+                        <li>Total projected requirement by 2027: approximately $100,000</li>
+                    </ul>
+                </div>
+
+                <div class="mini">
+                    <h4>5.2 Media & Communication – Transparency and Community Engagement</h4>
+                    <p><strong>Head:</strong> Fadhil</p>
+                    <p><strong>Team:</strong> Bram, Athaya, Hanif, Wildan (growing team)</p>
+                    <ul class="bullets">
+                        <li>Consistent and timely information flow</li>
+                        <li>WhatsApp as the primary channel</li>
+                        <li>Weekly announcements and program updates</li>
+                        <li>Communication of balance, progress, news, and information</li>
+                        <li>Kajian schedules, events, and initiative updates</li>
+                        <li>Improved consistency compared to previous ad-hoc communication</li>
+                        <li>Documentation for reporting, promotion, and historical records</li>
+                        <li>Structured content including event summaries, photos, and banners</li>
+                        <li>Improved visibility of programs</li>
+                        <li>Expansion of dakwah through digital platforms such as Instagram</li>
+                        <li>Promotion of fundraising campaigns and events</li>
+                        <li>Support for cross-division initiatives including Muslimah, Youth, and Education</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="card">
+            <div class="section-title">
+                <h3>6. Community Programs and Impact</h3>
+                <span class="tag">Community</span>
+            </div>
+
+            <div class="mini" style="margin-bottom:18px;">
+                <h4>Division Leadership</h4>
+                <p><strong>Head:</strong> Gebi</p>
+                <p><strong>Sekretaris:</strong> Mba Khadijah, Mba Mia</p>
+                <p><strong>Bendahara:</strong> Mba Citra, Mba Meri</p>
+                <p><strong>Excursions and social:</strong> Teh Nurul, Teh Atje</p>
+                <p><strong>Dakwah and Media:</strong> Mba Ningrum, Mba Dila, Mba Wina, Teh Qanita, Teh Salsa, Mba Rini</p>
+                <p><strong>Fundraising, Events, and Senior Program:</strong> Teh Ina, Mba Desi, Teh Erna, Kak Farah, Kak Nila, Kak Misita, Mba Dwi, Mba Erin, Mba Mira, Kak Dhy, Teh Sylvi, Kak Fitri, Kak Fidi</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="mini">
+                    <h4>6.1 Muslimah Westall Programs</h4>
+                    <p>
+                        Muslimah Westall has played a significant role in strengthening community engagement,
+                        particularly among sisters, families, and senior members.
+                    </p>
+                    <ul class="bullets">
+                        <li>Silaturahim & Leadership Handover (1 June 2025)</li>
+                        <li>Kajian Hadits (Imam Nawawi – Fortnightly)</li>
+                        <li>Tahsin Classes (Children & Ladies)</li>
+                        <li>Structured Quran learning including tajwid, tafsir, and memorisation</li>
+                        <li>Regular Sisters’ Halaqah</li>
+                        <li>Idul Adha 1446H Preparation & Implementation</li>
+                        <li>Ramadan & Eid Al-Fitr 1447H Activities</li>
+                        <li>Intimate Dinner & Community Gathering (July 2025)</li>
+                        <li>Community Visit: Anies Baswedan (12 August 2025)</li>
+                        <li>Jalan Kaki Bersama</li>
+                        <li>Movie Night Community Event</li>
+                        <li>Open Mosque Participation (Feb 2026)</li>
+                        <li>Fundraising Dinner with Ustadz Donny — $115,000 raised, $140,000 committed</li>
+                        <li>Warung Amal Merdeka — approximately $2,000</li>
+                        <li>Monthly Warung Amal Program</li>
+                        <li>Health Talk / Penyuluhan</li>
+                        <li>Senior Westall Picnic (Jan 2026)</li>
+                        <li>Regular visits and silaturahim with seniors</li>
+                        <li>Bi-weekly facility support (Piket 2 Pekan Sekali)</li>
+                    </ul>
+                    <p><strong>Impact Summary:</strong> Strong participation of sisters, major contribution to operations and events, key role in fundraising and sustainability.</p>
+                </div>
+
+                <div class="mini">
+                    <h4>6.2 Youth Programs (Westall Youth)</h4>
+                    <p><strong>Head:</strong> Fikri</p>
+                    <p><strong>Members:</strong> Hanif, Ardissa, Andi, Razi, Raihan, Avi, Didi</p>
+                    <p>
+                        Westall Youth delivered a series of structured and high-impact programs throughout 2025,
+                        focusing on outdoor engagement, sports, and community bonding.
+                    </p>
+                    <ul class="bullets">
+                        <li>5 major events conducted across May–November 2025</li>
+                        <li>Collaboration with IMCV, MIIS, and Muslimah Westall</li>
+                        <li>Supported by 7+ sponsors and partners</li>
+                        <li>Silaturahmi Hike & Chill (10 May 2025 – Wilson Promontory)</li>
+                        <li>Bike Ride: Pedal & Connect (12 July 2025 – Melbourne City Loop, 30km)</li>
+                        <li>Snow Trip to Mt Buller (26 July 2025)</li>
+                        <li>Badminton & Futsal Tournament (31 August 2025 – Westall School)</li>
+                        <li>IMCV Tennis Open 2025 (23 November 2025 – Monash University)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="finance" class="card">
+            <div class="section-title">
+                <h3>7. Financial Performance and Sustainability</h3>
+                <span class="tag">Finance</span>
+            </div>
+
+            <div class="quote">
+                Based on annual financial records, Masjid Westall demonstrated strong financial growth and
+                operational capacity throughout the 2025–2026 period.
+            </div>
+
+            <div class="grid-2" style="margin-top:18px;">
+                <div class="mini">
+                    <h4>7.1 Financial Summary (Apr 2025 – Mar 2026)</h4>
+                    <ul class="bullets">
+                        <li>Opening Balance: $14,661.98</li>
+                        <li>Total Income: $337,814.14</li>
+                        <li>Total Expenses: $295,461.50</li>
+                        <li>Closing Balance: $57,014.62</li>
+                        <li>Estimated upcoming obligation: Electrical Invoice (~$15,000)</li>
+                        <li>Net Surplus: $42,352.64</li>
+                    </ul>
+                </div>
+
+                <div class="mini">
+                    <h4>7.2 Income and Expense Trends</h4>
+                    <ul class="bullets">
+                        <li>Stable baseline income around $10k–$25k most months</li>
+                        <li>October 2025 spike (~$115k) – Fundraising with Ustadz Donny</li>
+                        <li>February–March fundraising continuation</li>
+                        <li>10–16 March Ramadan period – $43.6k</li>
+                        <li>17–23 March Ramadan period – $22k</li>
+                        <li>Expense peak in December 2025 (~$63k)</li>
+                        <li>Expense peak in February–March 2026 (~$70k)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mini" style="margin-top:18px;">
+                <h4>7.3 Expense Distribution</h4>
+                <div class="stat-bar">
+                    <div class="bar-row">
+                        <div>Capital Works & Renovation</div>
+                        <div class="bar-track"><div class="bar-fill" style="width:59%;"></div></div>
+                        <div>59%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div>Events & Community Programs</div>
+                        <div class="bar-track"><div class="bar-fill" style="width:10%;"></div></div>
+                        <div>10%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div>Venue & Facility Use</div>
+                        <div class="bar-track"><div class="bar-fill" style="width:9%;"></div></div>
+                        <div>9%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div>Religious Staff Support</div>
+                        <div class="bar-track"><div class="bar-fill" style="width:9%;"></div></div>
+                        <div>9%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div>Charity Distribution</div>
+                        <div class="bar-track"><div class="bar-fill" style="width:7%;"></div></div>
+                        <div>7%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div>IT / Utilities / Admin / Fees</div>
+                        <div class="bar-track"><div class="bar-fill" style="width:3%;"></div></div>
+                        <div>1–3%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout" style="margin-top:18px;">
+                <strong>7.4 Financial Challenges and Future Sustainability</strong><br>
+                High dependency on event-based fundraising spikes, the need for predictable recurring income streams,
+                and the need for business and sustainability initialisation remain key priorities.
+                Future directions include recurring income models, strengthening wakaf, monthly donors,
+                sponsorship pathways, and incentive-based promotion support.
+            </div>
+        </section>
+
+        <section id="future" class="card">
+            <div class="section-title">
+                <h3>9. Transition and Future Direction (2026)</h3>
+                <span class="tag">Forward Strategy</span>
+            </div>
+
+            <div class="mini" style="margin-bottom:18px;">
+                <h4>9.1 Strategic Shift</h4>
+                <p><strong>Masjid Westall should moving into:</strong> Donations → Sustainability</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="mini">
+                    <h4>A. Education Expansion</h4>
+                    <ul class="bullets">
+                        <li>Limited direct involvement in supporting Madrasah Westall during 2025–2026</li>
+                        <li>Focus remained on infrastructure, fundraising, and events</li>
+                        <li>Need to strengthen alignment and collaboration with Madrasah Westall</li>
+                        <li>Classroom spaces not yet fully utilised post-Ramadan</li>
+                        <li>Potential: teaching spaces, AI and digital literacy, tutoring, and skills programs</li>
+                    </ul>
+                </div>
+
+                <div class="mini">
+                    <h4>B. Youth Engagement</h4>
+                    <ul class="bullets">
+                        <li>Group Cinta focuses on second-generation youth now entering young adulthood</li>
+                        <li>Priority areas: events, program leadership, masjid operations</li>
+                        <li>Collaboration opportunities: YIMSA, MIIS, OneSpace</li>
+                    </ul>
+                </div>
+
+                <div class="mini">
+                    <h4>C. Westall Hub / Website System Development</h4>
+                    <ul class="bullets">
+                        <li>Booking system for facilities and events</li>
+                        <li>Centralised program calendar</li>
+                        <li>Masjid history, updates, documentation, and news</li>
+                        <li>Improve accessibility, transparency, engagement, and digital scalability</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection" class="card">
+            <div class="section-title">
+                <h3>10. Reflection & Journey 2025</h3>
+                <span class="tag">Narrative Timeline</span>
+            </div>
+
+            <div class="timeline">
+                <div class="step">
+                    <h4>10.1 Foundation Phase – Strengthening Religious Core</h4>
+                    <p>
+                        The 2025 journey began with a strong emphasis on establishing the religious foundation
+                        of Masjid Westall, primarily through the Religious & Dakwah Division (Kerohanian).
+                    </p>
+                    <ul class="bullets">
+                        <li>Hadith sessions after Subuh prayer</li>
+                        <li>Expansion of regular kajian and literacy programs</li>
+                        <li>Appointment of Ustadz Umair as Imam</li>
+                        <li>Early establishment of Sister Mashael, Pak Widodo, and Rizka</li>
+                        <li>Emergence of young imams and hafiz</li>
+                        <li>Early regeneration pipeline alongside Ustadz Umair</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>10.2 Program Establishment – Strong Base, Untapped Potential</h4>
+                    <p>
+                        By mid-2025, programs under the Religious & Dakwah Division were successfully initiated,
+                        structurally organised, and supported by available resources, though there remains significant room for expansion.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <h4>10.3 Second Phase – Fundraising Shift (Q2 Focus)</h4>
+                    <p>
+                        A major milestone led by Muslimah Westall and Mbak Erin brought a landmark fundraising
+                        event with Ustadz Donny Rais, with AUD 140,000 pledged and AUD 115,000 successfully collected.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <h4>10.4 Third Phase – Media, Communication & Campaign Support</h4>
+                    <p>
+                        Media functions and website initiatives expanded to strengthen events promotion, fundraising campaigns,
+                        and community engagement, especially during financial pressure before Idul Fitri.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <h4>10.5 Youth Engagement & Regeneration</h4>
+                    <p>
+                        Beyond Madrasah Westall (Group Cinta), youth involvement expanded into operational support,
+                        event participation, and religious and leadership development.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <h4>10.6 Facility & Education Utilisation Gap</h4>
+                    <p>
+                        A key reflection is the gap between infrastructure readiness and program utilisation.
+                        Classroom utilisation is not yet optimal, and the education ecosystem of Madrasah Westall, YIMSA, and MIIS
+                        is not yet fully integrated.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <h4>10.7 Stakeholder Continuity & Leadership Momentum</h4>
+                    <p>
+                        Muslimah Westall and Youth Westall (under Fikrie’s coordination) should continue to be empowered and supported
+                        as key drivers of sustainability.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <h4>10.8 Key Gaps Identified</h4>
+                    <ul class="bullets">
+                        <li>Limited integration between Madrasah Westall, YIMSA, and MIIS</li>
+                        <li>Underutilisation of education infrastructure</li>
+                        <li>Need for more structured expansion of existing programs</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>10.9 Forward Reflection – Direction Beyond 2025</h4>
+                    <ul class="bullets">
+                        <li><strong>New Place:</strong> expansion or acquisition of a larger, more sustainable space</li>
+                        <li><strong>New Business Model:</strong> income-generating initiatives and reduced dependency on event-based fundraising</li>
+                        <li><strong>Grants & External Funding:</strong> government and institutional grants for stronger sustainability</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="personal" class="card">
+            <div class="section-title">
+                <h3>10.10 Personal Reflection & Family Acknowledgement</h3>
+                <span class="tag">Personal Note</span>
+            </div>
+
+            <p>
+                I would like to take this opportunity to share a personal reflection openly and sincerely with the community.
+            </p>
+            <p>
+                The decision to step down from my role as Takmir is not something that happened suddenly.
+                It has been the result of a long process of reflection and consideration. Over time, I came to realise
+                that I have not been able to carry out the role as the main executor as well as I had intended.
+            </p>
+            <p>
+                By nature, I tend to go all out and seek full control in what I do. While this has helped in initiating many programs,
+                I have come to understand that this approach has also had unintended consequences—particularly on my own wellbeing.
+            </p>
+            <p>
+                In recent months, I experienced moments where I felt overwhelmed and struggled to keep up with the demands of responsibilities.
+                There were times when I was physically unwell, yet continued to push through. While the amanah continued to run,
+                I began to feel the impact not only on my health but also on other aspects of my life, including my academic responsibilities.
+                There were even instances where I did not perform as expected academically because I placed those responsibilities as the last priority.
+            </p>
+            <p>
+                These are realities that, for a long time, I did not fully acknowledge.
+            </p>
+            <p>
+                I also want to emphasise that my wife has been the person who supported me the most throughout this journey.
+                Her support has never been a limitation, but rather a source of strength. Precisely because of her care and concern,
+                she was the first to notice the changes in my condition—often earlier than I realised myself. As the closest person to me,
+                she has seen the full picture of my situation, while I, as the one going through it, often overlooked it.
+            </p>
+            <p>
+                I would also like to express my sincere gratitude to my children, <strong>Fathan and Ghayda</strong>.
+            </p>
+            <p>
+                Although they may not fully understand the responsibilities I was carrying, they have been part of this journey
+                in their own way—through their patience, their understanding when I was not fully present, and their quiet support at home.
+                There were many moments when my time and attention were divided, and I realise that this has also affected them.
+            </p>
+            <p>
+                Their presence has been a reminder for me to reflect more deeply on balance, responsibility, and what truly matters.
+                For that, I am deeply grateful and ask for forgiveness for the moments I could have been more present as a father.
+            </p>
+            <p>
+                The resign intention shared earlier, before Ramadhan 2026, with Pak Aru and Pak Ade.
+                However, I was waiting for the right time to formally communicate this decision.
+            </p>
+            <p>
+                I also recognise that I am not someone who can carry amanah in a minimal or partial way.
+                I tend to initiate many things—across media, kerohanian, youth, grants, and other areas—which eventually created an imbalance,
+                not only within myself but also affecting those closest to me, especially my family.
+                In this, I acknowledge that I have not managed myself well.
+            </p>
+            <p>
+                For these reasons, I believe that stepping back at this point is necessary for me to recover,
+                recalibrate, and improve my personal condition.
+            </p>
+        </section>
+
+        <section id="community" class="card">
+            <div class="section-title">
+                <h3>Message to the Community</h3>
+                <span class="tag">For Jamaah</span>
+            </div>
+
+            <p>To the jamaah, I sincerely ask for your understanding.</p>
+            <p>
+                This decision is not about stepping away from contribution, but about ensuring that I do not continue
+                in a state that is not sustainable—for myself and for those around me.
+            </p>
+
+            <div class="grid-3">
+                <div class="mini">
+                    <h4>Reflection 1</h4>
+                    <p>Tradition is not always the reference for improvement.</p>
+                </div>
+                <div class="mini">
+                    <h4>Reflection 2</h4>
+                    <p>Organisational roles, including Takmir and Muslimah Westall, do not have to follow traditional assumptions such as being husband and wife.</p>
+                </div>
+                <div class="mini">
+                    <h4>Reflection 3</h4>
+                    <p>What matters is capacity, sustainability, and collective benefit for the community.</p>
+                </div>
+            </div>
+
+            <p style="margin-top:18px;">
+                I strongly believe that Masjid Westall has already built a strong foundation,
+                a committed community, and active stakeholders across divisions.
+            </p>
+            <p>
+                I encourage all of us to continue supporting Muslimah Westall and Youth Westall
+                (under Fikrie’s coordination) as they are key drivers of sustainability moving forward.
+            </p>
+        </section>
+
+        <section id="closing" class="card">
+            <div class="section-title">
+                <h3>Closing Personal Note</h3>
+                <span class="tag">Closing</span>
+            </div>
+
+            <p>
+                This journey has been meaningful, full of lessons, and deeply valuable for me personally.
+            </p>
+            <p>
+                I ask for forgiveness for any shortcomings, and I sincerely thank everyone for the trust,
+                support, and opportunity to serve.
+            </p>
+            <p>
+                May Allah SWT accept all our efforts and grant barakah to Masjid Westall and its community.
+            </p>
+
+            <div class="dua">
+                Ya Allah,
+                Make my family a source of sakinah,
+                A place where I return with peace and clarity,
+                And make me a better leader within my home before anything else.
+
+                Bless my wife for her patience, support, and sincerity.
+                Reward her for every unseen sacrifice.
+
+                And for my children,
+                Guide them to grow with iman, knowledge, and good character,
+                And allow me to be a better example for them moving forward.
+
+                Ya Allah,
+                Bless the jamaah of Masjid Westall,
+                Strengthen our ukhuwah,
+                Unite our hearts in goodness,
+                And allow this masjid to continue growing as a place of iman, knowledge, and benefit for all.
+
+                Reward every volunteer, every contributor, and every supporter—
+                for what is seen and what is unseen.
+
+                Accept whatever small efforts we have made,
+                Forgive what we have fallen short in,
+                And guide us to what is better in this world and the hereafter.
+            </div>
+        </section>
+
+        <div class="footer-note">
+            Masjid Westall AGM Accountability Report 2025–2026
         </div>
-        <div class="section-card">
-          <h2>Mission</h2>
-          <div class="grid-2">
-            <div class="tile"><strong>Mission 1</strong><br>Promote program-based leadership</div>
-            <div class="tile"><strong>Mission 2</strong><br>Empower community through structured involvement</div>
-            <div class="tile"><strong>Mission 3</strong><br>Strengthen iman through strategic programs</div>
-            <div class="tile"><strong>Mission 4</strong><br>Elevate youth and community engagement</div>
-          </div>
-          <div class="tile soft" style="margin-top:16px;">
-            <strong>Mission 5</strong><br>
-            Foster ukhuwah across all segments of the community, including seniors, new members, and younger generations.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="structure" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <div class="section-number">3</div>
-            <div>
-              <h2>Organisational Structure</h2>
-              <p class="muted">This structure enables scalable program delivery, clear accountability, and cross-division coordination.</p>
-            </div>
-          </div>
-
-          <div class="grid-3">
-            <div class="tile accent">
-              <h4>Executive Leadership</h4>
-              <p class="small">Strategic direction & governance</p>
-              <ul>
-                <li>Chairperson: Choiru</li>
-                <li>Vice Chairperson: Fikrie Afif</li>
-                <li>Second Vice Chairperson: Ardissa Saukat</li>
-                <li>Secretary 1: Abbadi Thalib</li>
-                <li>Secretary 2: Dipto Pratyaksa</li>
-                <li>Treasurer: Wildan</li>
-                <li>Technical Advisor: Lintang</li>
-              </ul>
-            </div>
-            <div class="tile">
-              <h4>Core Operational Divisions</h4>
-              <ul>
-                <li>Religious & Dakwah (Kerohanian)</li>
-                <li>Domestic & Facility (Rumah Tangga)</li>
-              </ul>
-              <p class="small muted">Program execution with daily and weekly operational impact.</p>
-            </div>
-            <div class="tile">
-              <h4>Supporting & Expansion Divisions</h4>
-              <ul>
-                <li>Media & Communication</li>
-                <li>Fundraising & Economic</li>
-                <li>Facility Improvement & Development</li>
-              </ul>
-              <p class="small muted">Growth, outreach, sustainability, and future-facing systems.</p>
-            </div>
-          </div>
-
-          <div class="table-wrap" style="margin-top:18px;">
-            <table>
-              <thead>
-                <tr>
-                  <th>Division</th>
-                  <th>Lead</th>
-                  <th>Focus</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Religious & Dakwah</td>
-                  <td>Abyan</td>
-                  <td>Kajian system, imam regeneration, inclusive religious programming</td>
-                </tr>
-                <tr>
-                  <td>Domestic & Facility</td>
-                  <td>Ridwan</td>
-                  <td>Cleanliness, setup readiness, maintenance, event support</td>
-                </tr>
-                <tr>
-                  <td>Media & Communication</td>
-                  <td>Fadhil</td>
-                  <td>Content, promotion, visibility, internal communication</td>
-                </tr>
-                <tr>
-                  <td>Fundraising & Economic</td>
-                  <td>—</td>
-                  <td>Warung Amal, events, sustainability planning</td>
-                </tr>
-                <tr>
-                  <td>Facility Improvement & Development</td>
-                  <td>—</td>
-                  <td>Infrastructure planning aligned with long-term growth</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="programs" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <div class="section-number">4</div>
-            <div>
-              <h2>Events & Community Impact</h2>
-              <p class="muted">Structured programs across Muslimah and Youth divisions strengthened participation, collaboration, and community ownership.</p>
-            </div>
-          </div>
-
-          <div class="grid-2">
-            <div class="tile">
-              <h3>4.1 Muslimah Westall Programs</h3>
-              <p>Muslimah Westall played a significant role in strengthening engagement among sisters, families, and seniors through religious, social, educational, outreach, and fundraising activities.</p>
-              <ul>
-                <li>Silaturahim & Leadership Handover</li>
-                <li>Kajian Hadits, Tahsin Classes, Sisters’ Halaqah</li>
-                <li>Idul Adha and Ramadan / Eid Al-Fitr activities</li>
-                <li>Community visit: Anies Baswedan</li>
-                <li>Health talk, senior picnic, regular senior visits</li>
-                <li>Fundraising dinner with Ustadz Donny</li>
-              </ul>
-              <div class="pill-row">
-                <span class="pill">Strong participation</span>
-                <span class="pill">Operational contribution</span>
-                <span class="pill">Fundraising support</span>
-              </div>
-            </div>
-            <div class="tile">
-              <h3>4.2 Youth Programs (Westall Youth)</h3>
-              <p>Westall Youth delivered structured, high-impact programs focused on outdoor engagement, sport, and social bonding in collaboration with IMCV, MIIS, and other partners.</p>
-              <ul>
-                <li>Silaturahmi Hike & Chill</li>
-                <li>Bike Ride: Pedal & Connect</li>
-                <li>Snow Trip to Mt Buller</li>
-                <li>Badminton & Futsal Tournament</li>
-                <li>IMCV Tennis Open 2025</li>
-              </ul>
-              <div class="pill-row">
-                <span class="pill">5 major events</span>
-                <span class="pill">7+ sponsors / partners</span>
-                <span class="pill">Cross-organisation collaboration</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="facilities" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <div class="section-number">5</div>
-            <div>
-              <h2>Facilities, Media & Operations</h2>
-              <p class="muted">Infrastructure and communication improvements supported a more functional, community-ready masjid environment.</p>
-            </div>
-          </div>
-
-          <h3>5.1 Facility Improvement & Development</h3>
-          <div class="grid-3">
-            <div class="tile"><strong>Classroom & Disabled Toilet</strong><br><span class="muted">$40,865 · Dec 2025</span><p class="small">Structured learning environment, accessibility, and venue hire potential.</p></div>
-            <div class="tile"><strong>Pergola Insulation</strong><br><span class="muted">$31,086 · Jan 2026</span><p class="small">Improved comfort and year-round use for classes, events, and gatherings.</p></div>
-            <div class="tile"><strong>Ceiling, Insulation & Roof</strong><br><span class="muted">$27,000 · Feb 2026</span><p class="small">Better energy efficiency, comfort, and structural reliability.</p></div>
-            <div class="tile"><strong>Timber Panels & Bookshelves</strong><br><span class="muted">$24,585 · Feb 2026</span><p class="small">Improved acoustics, appearance, and organisation of learning materials.</p></div>
-            <div class="tile"><strong>Air Conditioning Upgrade</strong><br><span class="muted">$13,574 · Feb 2026</span><p class="small">Comfort improvements across main prayer, ladies’, and classroom spaces.</p></div>
-            <div class="tile"><strong>Audio Visual & IT</strong><br><span class="muted">$6,944 · Feb 2026</span><p class="small">Improved presentation, live streaming, and donation systems.</p></div>
-          </div>
-
-          <div class="grid-2" style="margin-top:18px;">
-            <div class="tile soft">
-              <h4>Works in Progress</h4>
-              <ul>
-                <li>New Mihrab & Interior Enhancement — $27,000</li>
-                <li>Electrical System Upgrade — $15,000</li>
-              </ul>
-            </div>
-            <div class="tile soft">
-              <h4>Forward Outlook</h4>
-              <ul>
-                <li>Front façade and entrance upgrade — ~$60,000</li>
-                <li>Roof and gutter restoration — ~$25,000</li>
-                <li>Boundary and safety improvements — ~$15,000</li>
-              </ul>
-              <p class="strong">Projected requirement: ~$100,000 by 2027</p>
-            </div>
-          </div>
-
-          <h3 style="margin-top:26px;">5.2 Media & Communication</h3>
-          <div class="grid-2">
-            <div class="tile">
-              <ul>
-                <li>WhatsApp as the primary coordination channel</li>
-                <li>Weekly announcements for kajian, events, and initiatives</li>
-                <li>Improved consistency in communication and updates</li>
-              </ul>
-            </div>
-            <div class="tile">
-              <ul>
-                <li>Increased event documentation and visual content</li>
-                <li>Support for fundraising campaigns and cross-division programs</li>
-                <li>Improved visibility through banners, Instagram, and direct jamaah engagement</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="finance" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <div class="section-number">6</div>
-            <div>
-              <h2>Budget, Fundraising & Financial Performance</h2>
-              <p class="muted">Masjid Westall maintained a positive financial position while expanding infrastructure, programs, and community services.</p>
-            </div>
-          </div>
-
-          <div class="grid-4">
-            <div class="tile accent"><div class="muted small">Opening Balance</div><div class="strong">$14,661.98</div></div>
-            <div class="tile accent"><div class="muted small">Total Income</div><div class="strong">$337,814.14</div></div>
-            <div class="tile accent"><div class="muted small">Total Expenses</div><div class="strong">$295,461.50</div></div>
-            <div class="tile accent"><div class="muted small">Closing Balance</div><div class="strong">$57,014.62</div></div>
-          </div>
-
-          <div class="grid-2" style="margin-top:18px;">
-            <div class="tile">
-              <h4>Financial Highlights</h4>
-              <ul>
-                <li>Net surplus: $42,352.64</li>
-                <li>Upcoming electrical obligation: ~$15,000</li>
-                <li>Strong income spike in October 2025 through major fundraising</li>
-                <li>Expense peaks linked to programs and facility improvements</li>
-              </ul>
-            </div>
-            <div class="tile">
-              <h4>Expense Distribution</h4>
-              <ul>
-                <li>59% — Capital Works & Renovation</li>
-                <li>10% — Events & Community Programs</li>
-                <li>9% — Venue & Facility Use</li>
-                <li>9% — Religious Staff Support</li>
-                <li>7% — Charity Distribution</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="tile soft" style="margin-top:18px;">
-            <h4>Key Financial Challenges & Direction</h4>
-            <p>Masjid Westall remains partly dependent on event-based fundraising spikes. Long-term sustainability will require stronger recurring income models, including wakaf systems and monthly donor programs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="future" class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <div class="section-number">7</div>
-            <div>
-              <h2>Transition & Future Direction (2026)</h2>
-              <p class="muted">A shift from activities to systems, from events to measurable impact, and from donations to sustainability.</p>
-            </div>
-          </div>
-
-          <div class="grid-3">
-            <div class="tile accent">
-              <h4>Education Expansion</h4>
-              <p class="small">Strengthen collaboration with Madrasah Westall, activate classroom use, and expand skill-based programs such as technology, tutoring, and youth-focused education.</p>
-            </div>
-            <div class="tile accent">
-              <h4>Youth Engagement</h4>
-              <p class="small">Engage second-generation youth through regeneration pathways, leadership opportunities, and partnerships with student organisations such as YIMSA and MIIS.</p>
-            </div>
-            <div class="tile accent">
-              <h4>Westall Hub</h4>
-              <p class="small">Develop a digital platform for bookings, program calendars, masjid history, updates, documentation, and broader community communication.</p>
-            </div>
-          </div>
-
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-date">Shift 1</div>
-              <div><strong>Activities → Systems</strong><br><span class="muted">Build structured processes, clearer workflows, and sustainable operating models.</span></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">Shift 2</div>
-              <div><strong>Events → Measurable Impact</strong><br><span class="muted">Move toward clearer outcomes, participation tracking, and program accountability.</span></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">Shift 3</div>
-              <div><strong>Donations → Sustainability</strong><br><span class="muted">Support long-term planning through recurring support and better financial alignment.</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-card">
-          <div class="section-head">
-            <div class="section-number">8</div>
-            <div>
-              <h2>Closing</h2>
-            </div>
-          </div>
-          <p>We sincerely thank all contributors. We apologise for any shortcomings and remain committed to continuous improvement.</p>
-          <p>May Allah SWT accept all efforts and grant barakah.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-card">
-        <div class="strong">GitHub Pages Ready</div>
-        <p class="small">Save this file as <code>index.html</code> in your repository root. Then enable GitHub Pages in the repository settings to publish the site.</p>
-      </div>
-    </div>
-  </footer>
+    </main>
+</div>
 </body>
 </html>
